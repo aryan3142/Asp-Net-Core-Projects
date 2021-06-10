@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aryan\\Desktop\\Projects\\NationalParkAspNetCoreWebApi\\OutLierBookStore\\OutLierBookStore\\OutLierBookStore.csproj",
+      "projectUniqueName": "C:\\Users\\Aryan\\Desktop\\Projects\\Learning\\BookStore\\OutLierBookStore\\OutLierBookStore\\OutLierBookStore.csproj",
       "projectName": "OutLierBookStore",
-      "projectPath": "C:\\Users\\Aryan\\Desktop\\Projects\\NationalParkAspNetCoreWebApi\\OutLierBookStore\\OutLierBookStore\\OutLierBookStore.csproj",
+      "projectPath": "C:\\Users\\Aryan\\Desktop\\Projects\\Learning\\BookStore\\OutLierBookStore\\OutLierBookStore\\OutLierBookStore.csproj",
       "packagesPath": "C:\\Users\\Aryan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aryan\\Desktop\\Projects\\NationalParkAspNetCoreWebApi\\OutLierBookStore\\OutLierBookStore\\obj\\",
+      "outputPath": "C:\\Users\\Aryan\\Desktop\\Projects\\Learning\\BookStore\\OutLierBookStore\\OutLierBookStore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
