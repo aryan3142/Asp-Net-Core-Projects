@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "79djEdi/BnUYcRne2WbbnAhkehY86rKWqHPe265SiwdQtQuzSlPoYi+7UntfE25DcQtVZSUPzZYKZ9FMLmP6Yg==",
+  "dgSpecHash": "gYbW35tno2GmZru/47BQZR+R4hYFdI+nczWE05SZrnUnaWyTGSmAwdr5J6/afbMzWY9RY8DWZEeq7TlKWvdhxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aryan\\Desktop\\Projects\\Learning\\BookStore\\OutLierBookStore\\OutLierBookStore\\OutLierBookStore.csproj",
+  "projectFilePath": "C:\\Users\\Aryan\\Desktop\\Projects\\NationalParkAspNetCoreWebApi\\OutLierBookStore\\OutLierBookStore\\OutLierBookStore.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
