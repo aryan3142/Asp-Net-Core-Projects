@@ -8,9 +8,19 @@ namespace OutLierBookStore.Controllers
 {
     public class HomeController : Controller
     {
-        public string Index()
+        public ViewResult Index()
         {
-            return "Hello World !";
+            return View();
         }
+
+        public ActionResult AboutUs()
+        {
+            return View();
+        }
+        public ViewResult ContactUs()
+        {
+            return View();
+        }
+
     }
 }

@@ -1,0 +1,101 @@
+﻿@using OutLierBookStore.Models;
+@model Book; 
+
+
+<div class="container">
+    <h3 class="display-4">Book details</h3>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                  
+                        <img src="~/Images/BookImages/images.jpg" class="d-block w-100" style="height:300px;width:400px">
+                    </div>
+                    <div class="carousel-item" >
+                        <img src="~/Images/BookImages/photo-1589998059171-988d887df646.jpg" class="d-block w-100" style="height:300px;width:400px" alt="...">
+           
+                    </div>
+                    <div class="carousel-item" >
+                        <img src="~/Images/BookImages/wp2036947.jpg" class="d-block w-100" style="height:300px;width:400px" alt="...">
+                   
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@Model.Title</h1>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-primary">
+                    <span class="label label-primary">By:</span>
+                    <span class="monospaced"> @Model.Author</span>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="description">
+                        @Model.Description
+
+                    </p>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <button class="btn btn-outline-danger">
+                        Read Now
+                    </button>
+                </div>
+
+            </div>
+            <hr />
+            <ul class="list-group">
+                <li class="list-group-item"><span class="font-weight-bold">Category - </span>@Model.Category </li>
+                <li class="list-group-item"><span class="font-weight-bold">Total Pages - </span>@Model.TotalPages </li>
+                <li class="list-group-item"><span class="font-weight-bold">Language - </span>@Model.Langauge</li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="py-5 bg-light">
+        <h3 class="h3">Similar Books</h3>
+        <div class="row">
+
+            @for (int i = 0; i < 5; i++)
+            {
+                <div class="col-md-4">
+                    <div class="card  mb-4 shadow-sm" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Images/download.svg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>

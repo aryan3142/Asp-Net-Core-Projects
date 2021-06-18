@@ -31,8 +31,9 @@ namespace OutLierBookStore
                 app.UseDeveloperExceptionPage();
             }
 
-
            app.UseRouting();
+
+            app.UseStaticFiles();
         
            app.UseEndpoints(endpoints =>
           {

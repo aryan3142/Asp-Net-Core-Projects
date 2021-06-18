@@ -2,4 +2,4 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/OutLierBookStore/OutLierBookStore/wwwroot
+/OutLierBookStore/OutLierBookStore/wwwroot/lib
