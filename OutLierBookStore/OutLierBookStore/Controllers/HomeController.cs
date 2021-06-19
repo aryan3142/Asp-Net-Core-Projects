@@ -10,6 +10,10 @@ namespace OutLierBookStore.Controllers
     {
         public ViewResult Index()
         {
+  
+
+            ViewData["Title"] = "Outlier";
+
             return View();
         }
 

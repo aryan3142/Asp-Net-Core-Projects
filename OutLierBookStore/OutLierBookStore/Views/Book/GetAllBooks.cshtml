@@ -1,4 +1,6 @@
-﻿@model IEnumerable<OutLierBookStore.Models.Book>
+﻿
+
+@model IEnumerable<Book>
 
 <div class="container">
     <h3 class="h3">All Books</h3>
@@ -12,7 +14,7 @@
                         <h5 class="card-title">@book.Title</h5>
                         <!-- Book Description -->
                         <p class="card-text">@book.Description</p>
-                        <a href="/book/getbook/@book.Id" class="btn btn-primary">View Details</a>
+                        <a asp-controller="book" asp-action="GetBook" asp-route-id="@book.Id" class="btn btn-primary">View Details</a>
                         <small class="text-muted">@book.Author</small>
                     </div>
                 </div>

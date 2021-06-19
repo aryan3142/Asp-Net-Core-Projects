@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>@ViewData["Title"] | Outlier BookStore</title>
   
     <link href="~/CSS/site.css" rel="stylesheet" type="text/css"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
@@ -22,17 +22,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                            <a class="nav-link active" aria-current="page" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/home/aboutus">About</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="AboutUs">About</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/home/contactus">Contact</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="ContactUs">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/book/getallbooks">All Books</a>
+                            <a class="nav-link" asp-controller="Book" asp-action="GetAllBooks">All Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Book" asp-action="AddNewBook">Add new book</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
