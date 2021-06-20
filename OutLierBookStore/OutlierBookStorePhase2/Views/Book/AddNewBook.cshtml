@@ -1,0 +1,52 @@
+﻿@model Book; 
+@{ 
+    ViewData["Title"] = "Add New Book";
+}
+
+<div class="container">
+    <h3 class="display-4">Add New Book</h3>
+    @if (ViewBag.IsSuccess == true)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Congratulations !</strong> Your book has been added to Oulier.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            Click <a asp-controller="Book" asp-action="GetBookById" asp-route-id="@ViewBag.Id">here</a> to view the details.
+        </div>
+    }
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Author"></label>
+        <input asp-for="Author" class="form-control" />
+        <span asp-validation-for="Author" class="text-danger"> </span>
+    </div>
+
+     <div class="form-group">
+             <label asp-for="LanguageId"></label>
+             <select class="form-control" asp-for="LanguageId" asp-items="@ViewBag.Language">
+                 <option value="">Select your language</option>
+              
+             </select>
+
+          </div> 
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea class="form-control" asp-for="Description"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TotalPages"></label>
+        <input asp-for="TotalPages" class="form-control" />
+        <span asp-validation-for="TotalPages"></span>
+    </div><br />
+    <div class="form-group">
+        <input type="submit" value="Add New Book" class="btn btn-danger" />
+    </div>
+</form>
+
+</div>
