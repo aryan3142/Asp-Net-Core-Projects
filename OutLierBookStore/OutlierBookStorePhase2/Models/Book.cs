@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OutlierBookStorePhase2.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -10,10 +11,12 @@ namespace OutlierBookStorePhase2.Models
     {
         [Key]
         public int Id { get; set; }
-        [StringLength(100,MinimumLength = 5)]
-        [Required]
+       [StringLength(100,MinimumLength = 5)]
+       [Required(ErrorMessage ="Please enter the title of the book")]
+      // [MyCustomValidation(text = "MVC")]
         public string Name { get; set; }
-        [Required]
+
+        [Required(ErrorMessage ="Please enter the name of the Author")]
         public string Author { get; set; }
         public string Description { get; set; }
         [Required(ErrorMessage = "Please enter the Total number of pages")]
