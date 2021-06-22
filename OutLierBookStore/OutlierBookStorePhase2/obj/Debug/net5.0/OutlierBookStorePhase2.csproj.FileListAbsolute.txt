@@ -146,3 +146,4 @@ C:\Users\Aryan\Desktop\Projects\Learning\BookStore\OutLierBookStore\OutlierBookS
 C:\Users\Aryan\Desktop\Projects\Learning\BookStore\OutLierBookStore\OutlierBookStorePhase2\obj\Debug\net5.0\ref\OutlierBookStorePhase2.dll
 C:\Users\Aryan\Desktop\Projects\Learning\BookStore\OutLierBookStore\OutlierBookStorePhase2\obj\Debug\net5.0\OutlierBookStorePhase2.pdb
 C:\Users\Aryan\Desktop\Projects\Learning\BookStore\OutLierBookStore\OutlierBookStorePhase2\obj\Debug\net5.0\OutlierBookStorePhase2.genruntimeconfig.cache
+C:\Users\Aryan\Desktop\Projects\Learning\BookStore\OutLierBookStore\OutlierBookStorePhase2\bin\Debug\net5.0\libman.json
