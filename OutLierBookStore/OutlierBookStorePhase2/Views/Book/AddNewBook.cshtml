@@ -13,37 +13,51 @@
             Click <a asp-controller="Book" asp-action="GetBookById" asp-route-id="@ViewBag.Id">here</a> to view the details.
         </div>
     }
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label asp-for="Name"></label>
         <input asp-for="Name" class="form-control" />
         <span class="text-danger" asp-validation-for="Name"></span>
-    </div>
+    </div><br />
 
     <div class="form-group">
         <label asp-for="Author"></label>
         <input asp-for="Author" class="form-control" />
         <span asp-validation-for="Author" class="text-danger"> </span>
-    </div>
+    </div><br />
 
-     <div class="form-group">
-             <label asp-for="LanguageId"></label>
-             <select class="form-control" asp-for="LanguageId" asp-items="@ViewBag.Language">
-                 <option value="">Select your language</option>
-              
-             </select>
+    <div class="form-group">
+        <label asp-for="LanguageId"></label>
+        <select class="form-control" asp-for="LanguageId" asp-items="@ViewBag.Language">
+            <option value="">Select your language</option>
 
-          </div> 
+        </select>
+
+    </div> <br />
     <div class="form-group">
         <label asp-for="Description"></label>
         <textarea class="form-control" asp-for="Description"></textarea>
         <span asp-validation-for="Description" class="text-danger"></span>
-    </div>
+    </div><br />
     <div class="form-group">
         <label asp-for="TotalPages"></label>
         <input asp-for="TotalPages" class="form-control" />
         <span asp-validation-for="TotalPages" class="text-danger"></span>
     </div><br />
+
+    <div class="form-group">
+        <label asp-for="CoverPhoto" class="form-label"></label>
+        <input class="form-control" type="file" asp-for="CoverPhoto" id="formFile">
+        <span asp-validation-for="CoverPhoto" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="GalleryFiles" class="form-label"></label>
+        <input class="form-control" asp-for="GalleryFiles" id="formFile">
+        <span asp-validation-for="GalleryFiles" class="text-danger"></span>
+    </div>
+    <br />
+
     <div class="form-group">
         <input type="submit" value="Add New Book" class="btn btn-danger" />
     </div>

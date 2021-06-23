@@ -20,6 +20,10 @@ namespace OutlierBookStorePhase2.Repository
 
         public int AddNewBook(Book book)
         {
+            foreach (var file in book.Gallery)
+            {
+                _context.Galleries.Add(file);
+            }
             _context.Books.Add(book);
            return _context.SaveChanges() <= 0 ? 0 : book.Id;
         }
@@ -40,6 +44,10 @@ namespace OutlierBookStorePhase2.Repository
 
             var language = _context.Languages.FirstOrDefault(x => x.Id == book.LanguageId);
 
+            var galleryfiles = _context.Galleries.Where(x => x.BookId == book.Id).ToList();        
+           
+            book.Gallery = galleryfiles;
+            
             book.Language = language;
 
             return book == null ? null : book;

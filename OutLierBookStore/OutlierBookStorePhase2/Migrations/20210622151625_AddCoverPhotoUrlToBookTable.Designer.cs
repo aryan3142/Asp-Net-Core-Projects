@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OutlierBookStorePhase2.Context;
 
 namespace OutlierBookStorePhase2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210622151625_AddCoverPhotoUrlToBookTable")]
+    partial class AddCoverPhotoUrlToBookTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,29 +60,6 @@ namespace OutlierBookStorePhase2.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("OutlierBookStorePhase2.Models.Gallery", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("URL")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BookId");
-
-                    b.ToTable("Galleries");
-                });
-
             modelBuilder.Entity("OutlierBookStorePhase2.Models.Language", b =>
                 {
                     b.Property<int>("Id")
@@ -108,20 +87,6 @@ namespace OutlierBookStorePhase2.Migrations
                         .IsRequired();
 
                     b.Navigation("Language");
-                });
-
-            modelBuilder.Entity("OutlierBookStorePhase2.Models.Gallery", b =>
-                {
-                    b.HasOne("OutlierBookStorePhase2.Models.Book", null)
-                        .WithMany("Gallery")
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("OutlierBookStorePhase2.Models.Book", b =>
-                {
-                    b.Navigation("Gallery");
                 });
 
             modelBuilder.Entity("OutlierBookStorePhase2.Models.Language", b =>

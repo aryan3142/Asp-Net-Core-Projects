@@ -11,7 +11,16 @@
         {
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm" style="width: 18rem;">
-                    <img class="card-img-top" src="~/Images/download.svg" alt="Card image cap">
+
+                    @if (book.CoverPhotoUrl == null)
+                    {
+                        <img class="card-img-top" src="~/Images/download.svg" alt="Card image cap">
+                    }
+                    else
+                    {
+                        <img class="card-img-top" src="@book.CoverPhotoUrl" alt="Card image cap">
+                    }
+
                     <div class="card-body">
                         <h5 class="card-title">@book.Name</h5>
                         <!-- Book Description -->

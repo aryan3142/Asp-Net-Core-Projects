@@ -17,6 +17,8 @@ namespace OutlierBookStorePhase2.Context
         public DbSet<Book> Books { get; set; }
 
         public DbSet<Language> Languages { get; set; }
+
+        public DbSet<Gallery> Galleries { get; set; }
     }
 
 }

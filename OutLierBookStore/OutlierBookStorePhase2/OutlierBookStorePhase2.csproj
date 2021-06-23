@@ -13,4 +13,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Book\Cover\" />
+    <Folder Include="wwwroot\Book\Gallery\" />
+  </ItemGroup>
+
 </Project>
