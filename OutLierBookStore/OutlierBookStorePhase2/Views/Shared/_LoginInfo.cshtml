@@ -1,0 +1,24 @@
+﻿
+@inject Microsoft.AspNetCore.Identity.SignInManager<ApplicationUser> _signInManager
+@if (_signInManager.IsSignedIn(User))
+{
+    <div class="nav-item dropdown">
+        <a class="nav-link btn btn-secondary dropdown-toggle" href="#" id="dropdownMenuButton1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hello @User.Identity.Name
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <a class="dropdown-item" asp-action="Logout" asp-controller="Account">Logout</a>
+        </ul>
+    </div>
+}
+else
+{
+    <li class="nav-item">
+        <a class="btn btn-outline-success" asp-controller="Account" asp-action="Login" asp-route-returnUrl="@Context.Request.Path">Login</a>
+        <a class="btn btn-success" asp-controller="Account" asp-action="SignUp">Register</a>
+    </li>
+}
+
+
+
+
