@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -45,6 +46,7 @@ namespace OutlierBookStorePhase2.Controllers
             return book == null ? Content($"No Book with Id {id} found") : View(book);
         }
 
+        [Authorize]
         public IActionResult AddNewBook(bool isSuccess = false,int id = 0)
         {
             var book = new Book();
@@ -70,7 +72,7 @@ namespace OutlierBookStorePhase2.Controllers
                     //we need to make a new variable "serverfolder" inside it we need to define the path of actual folder.
                     string folder = "Book/Cover/";
 
-                    book.CoverPhotoUrl =  UploadImage(folder,book.CoverPhoto);
+                    book.CoverPhotoUrl =  UploadFile(folder,book.CoverPhoto);
 
                 }
 
@@ -86,11 +88,18 @@ namespace OutlierBookStorePhase2.Controllers
                         {
  
                             Name = file.FileName,
-                            URL = UploadImage(folder, file)
+                            URL = UploadFile(folder, file)
                         };
                         book.Gallery.Add(gallery1);
                     }
                    
+                }
+                if (book.BookPdf != null)
+                {
+               
+                    string folder = "Book/Pdf/";
+                    book.BookPdfUrl = UploadFile(folder, book.BookPdf);
+
                 }
 
                 int id = _bookOperations.AddNewBook(book);
@@ -104,7 +113,7 @@ namespace OutlierBookStorePhase2.Controllers
             return View();
         }
 
-        private string UploadImage(string folder,IFormFile file)
+        private string UploadFile(string folder,IFormFile file)
         {
             //append the filename to the path
             folder += Guid.NewGuid().ToString() + "_" + file.FileName;
@@ -112,10 +121,10 @@ namespace OutlierBookStorePhase2.Controllers
             //combining it with the server path
             string serverFolder = Path.Combine(_webHostEnvironment.WebRootPath, folder);
 
-            //save this copy to this particular folder or uploading the image to the folder
+            //save this copy to this particular folder or uploading the file to the folder
             file.CopyTo(new FileStream(serverFolder, FileMode.Create));
 
-            //returning the url or path of the image
+            //returning the url or path of the file
             return "/" + folder;
         }
     }

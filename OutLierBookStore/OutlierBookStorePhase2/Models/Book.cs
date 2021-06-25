@@ -26,6 +26,7 @@ namespace OutlierBookStorePhase2.Models
         public int LanguageId { get; set; }
         public string Category { get; set; }
         public Language Language { get; set; }
+
         [Display(Name = "Choose the cover photo of your book")]
         [Required(ErrorMessage = "Please upload the cover image for your book")]
         [NotMapped]
@@ -37,6 +38,12 @@ namespace OutlierBookStorePhase2.Models
         [NotMapped]
         public IFormFileCollection GalleryFiles { get; set; }
         public List<Gallery> Gallery { get; set; }
+
+        [Display(Name = "Upload Pdf of your book")]
+        [Required(ErrorMessage = "Please upload the pdf of your book")]
+        [NotMapped]
+        public IFormFile BookPdf { get; set; }
+        public string BookPdfUrl { get; set; }
 
     }
 }
