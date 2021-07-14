@@ -3,7 +3,7 @@
 
 >## **Project Manager: Aryan Khandelwal**
 >## ✍&nbsp; PROJECT DESCRIPTION
-It basically has some ideas of awesome python projects which you can implement on a day-to-day basic.
+It basically has some ideas of awesome ASP.NET projects which you can implement on a day-to-day basic.
 
 RELEVANT TECHNOLOGY
 ONLY .NET 👨‍💻
