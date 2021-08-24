@@ -1,5 +1,6 @@
 ﻿using AspNetWithMongo.Data;
 using AspNetWithMongo.Models;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,9 @@ namespace AspNetWithMongo.Repository
         {
             _shipwreckContext = shipwreckContext;
         }
-        public async Task<IEnumerable<Shipwreck>> GetShipwrecks()
+        public IEnumerable<Shipwreck> GetShipwrecks()
         {
-            return await _shipwreckContext.ShipWrecks.FindAsync(x => x.FeatureType == "Wrecks - Visible").ToListAsync();
+            return _shipwreckContext.ShipWrecks.Find(x => x.FeatureType == "Wrecks - Visible").ToList();
         }
     }
 }
