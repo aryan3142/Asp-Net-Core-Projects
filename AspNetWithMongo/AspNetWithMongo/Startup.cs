@@ -1,4 +1,5 @@
 using AspNetWithMongo.Data;
+using AspNetWithMongo.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +35,7 @@ namespace AspNetWithMongo
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AspNetWithMongo", Version = "v1" });
             });
             services.AddScoped<IShipwreckContext, ShipwreckContext>();
+            services.AddScoped<IShipwreckRepository, ShipwreckRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

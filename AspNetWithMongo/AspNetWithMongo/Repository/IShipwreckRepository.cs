@@ -8,6 +8,6 @@ namespace AspNetWithMongo.Repository
 {
     public interface IShipwreckRepository
     {
-        Task<IEnumerable<Shipwreck>> GetShipwrecks();
+        IEnumerable<Shipwreck> GetShipwrecks();
     }
 }
