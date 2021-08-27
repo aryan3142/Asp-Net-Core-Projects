@@ -10,7 +10,9 @@ namespace AspNetWithMongo.Models
     [BsonIgnoreExtraElements] //tells mongodb driver to not include or map the extra elements while fetching data
     public class Shipwreck
     {
-        public ObjectId Id { get; set; }
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
 
         [BsonElement("feature_type")]
         public string FeatureType { get; set; } 
